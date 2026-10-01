@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Habit Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- Header -->
+    <header>
+      <h1>Habit Tracker</h1>
+      <p>Build habits, track progress, stay consistent! 💪</p>
+      <button id="darkModeToggle">🌙 Dark Mode</button>
+    </header>
+
+    <!-- Progress Section -->
+    <section class="progress-section">
+      <p>Today's Progress</p>
+      <div class="progress-container">
+        <div id="progressBar"></div>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="health">Health</option>
+        <option value="study">Study</option>
+        <option value="exercise">Exercise</option>
+        <option value="other">Other</option>
+      </select>
+      <select id="statusFilter">
+        <option value="all">All Habits</option>
+        <option value="done">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+    </section>
+
+    <!-- Habit List -->
+    <section class="habit-list">
+      <ul id="habitContainer"></ul>
+    </section>
+
+    <!-- Add Habit Button -->
+    <button id="showAddModal" class="add-habit-btn">+ Add Habit</button>
+
+    <!-- Add Habit Modal -->
+    <div id="addHabitModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Add New Habit</h2>
+        <input type="text" id="habitName" placeholder="Habit Name">
+        <select id="habitCategory">
+          <option value="health">Health</option>
+          <option value="study">Study</option>
+          <option value="exercise">Exercise</option>
+          <option value="other">Other</option>
+        </select>
+        <input type="number" id="habitTarget" placeholder="Daily Target (times)">
+        <button id="addHabitBtn">Add Habit</button>
+      </div>
+    </div>
+
+    <!-- Stats Charts -->
+    <section class="stats-section">
+      <h3>Weekly Habit Stats</h3>
+      <canvas id="habitChart"></canvas>
+
+      <h3>Monthly Habit Stats</h3>
+      <canvas id="monthlyChart"></canvas>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
